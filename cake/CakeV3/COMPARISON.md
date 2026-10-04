@@ -28,6 +28,19 @@ The [Wordlist tests sheet](https://docs.google.com/spreadsheets/d/1qQNwggWIWtL-m
 
 `≥` marks a lower bound in the sheet, not an exact complete attack score. These six files were chosen for transfer across different datasets and wordlists, not to maximize every original Aptoide sheet category. For example, this 10K file scored 2,784,294 with HashMob medium words on the full sheet input, below that wordlist's 2,861,912 non-Cake leader.
 
+The three `buka_400k` entries above all refer to the **HashMob-medium** wordlist. Buka is the highest-scoring non-Cake row at or below each of those size caps in that section, but its 399,986 rules are not size-matched to 5M or 10M. That section has no non-Cake 5M or 10M entries. Its closest 1M-size rival is `Robot_CurrentBestRules` (942,680 rules; 3,492,910 cracked), which trails the CakeV3.1M lower bound by at least 124,068.
+
+The same sheet has closer deep-bin rivals on its other wordlists:
+
+| Sheet wordlist | Bin | CakeV3 cracked | Strongest non-Cake rule at or below cap (rules) | Rival cracked | CakeV3 lead |
+| --- | --- | ---: | --- | ---: | ---: |
+| SkullSecurityComp | 1M | 3,590,634 | `sapphire_v3.minimized` (742,903) | 3,276,029 | +314,605 |
+| SkullSecurityComp | 5M | 3,640,987 | `Vavaldi.5M` (4,998,394) | 3,408,780 | +232,207 |
+| SkullSecurityComp | 10M | 3,661,504 | `Vavaldi.10M` (9,996,621) | 3,546,615 | +114,889 |
+| HashMob large | 1M | ≥4,105,202 | `buka_400k` (399,986) | 3,858,156 | ≥247,046 |
+| HashMob large | 5M | ≥4,161,658 | `Vavaldi.5M` (4,998,394) | 4,026,858 | ≥134,800 |
+| HashMob large | 10M | ≥4,161,658 | `Vavaldi.10M` (9,996,621) | 4,114,684 | ≥46,974 |
+
 ## Transfer checks
 
 On six non-HIBP HashMob found-hash samples (Dogzer, Raaga, Armeec, Atspace, Newlook, Chordie), these exact six files won 30 same-input comparisons, tied six on Newlook, and lost none against the selected local HashMob, Fordy, and Vavaldi comparator files. The comparator within each bin used the same target, word sample, hash mode, and rule count. The samples contain previously recovered hashes; tests on current left files tied at zero and did not rank rule quality. This is evidence of transfer to the tested samples, not a guarantee against other private rulesets or unseen lists.
