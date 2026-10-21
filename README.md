@@ -11,6 +11,10 @@ Rules comparison sheet (by PenguinKeeper):<br>
 
 The [selected CakeV3 rules and comparison](cake/CakeV3/COMPARISON.md) provide one general-purpose file for each 1K, 10K, 100K, 1M, 5M, and 10M bin. These files use Git LFS.
 
+## CakeV4
+
+The [selected CakeV4 rules and comparison](cake/CakeV4/COMPARISON.md) provide the independently trained successor: one general-purpose file for each 1K, 10K, 100K, 1M, 5M, and 10M bin. These files use Git LFS.
+
 
 
 --- 
