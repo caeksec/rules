@@ -9,12 +9,12 @@ their byte sizes and SHA-256 hashes.
 | `CakeV4.1K.rule` | Full-wordlist-validated SkullSecurityComp CakeV4 |
 | `CakeV4.10K.rule` | Full-wordlist-validated SkullSecurityComp CakeV4 |
 | `CakeV4.100K.rule` | Full-wordlist-validated SkullSecurityComp CakeV4 |
-| `CakeV4.1M.rule` | HashMob-medium nested 100K-basis portfolio |
-| `CakeV4.5M.rule` | HashMob-medium 1M prefix plus retained 5M rules |
-| `CakeV4.10M.rule` | HashMob-medium 5M prefix plus retained 10M rules |
+| `CakeV4.1M.rule` | Full-wordlist-validated HashMob-medium semantic-alias suite |
+| `CakeV4.5M.rule` | HashMob-medium 1M set plus safe alias replacements |
+| `CakeV4.10M.rule` | Exact 5M byte prefix plus safe alias replacements |
 
-The 1M, 5M, and 10M files are exact byte-prefix nested. The smaller bins are
-independent selections.
+The 1M rule set is contained in 5M, and 5M is an exact byte prefix of 10M.
+The smaller bins are independent selections.
 
 ## Independent generation
 
@@ -53,23 +53,27 @@ tied every measured holdout:
 | 10K | +426 | +2 | +17 |
 | 100K | +65 | 0 | 0 |
 
-## Nested medium chain
+## Proven medium deep chain
 
-The selected medium 1M basis improved its preceding CakeV4 file by **+3,081
-Aptoide, +1,195 HIBP, +1,461 hashes.org, +1,391 DailyQuiz**, and **+432** on
-an evenly spaced 100,000-word native sample. Propagating that basis produced
-positive fixed-word results at both larger bins:
+The selected 1M file exhausted the complete HashMob-medium/Aptoide attack at
+**3,693,530**, a gain of **+593** over the freshly rerun CakeV3 1M score of
+3,692,937. Its 255 outgoing rules have equivalent retained forms: 239 `D0`
+versus `[` aliases and 16 commuting-substitution pairs. Hashcat produced
+byte-identical output for each pair on the edge-case probe set, so the 255
+independently ranked additions cannot remove coverage.
 
-| Bin | Aptoide | Collection4 | Collection5 | HIBP | hashes.org | DailyQuiz |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| 5M | +117 | +259 | +240 | +15 | +22 | +1,268 |
-| 10M | +120 | +236 | +224 | +18 | +27 | +1,196 |
+The 5M and 10M suites contain every selected 1M rule. They replace 37,680 and
+39,609 redundant spellings with rules already selected by the other CakeV4
+wordlist suites. The removed compact/spaced command pairs produced identical
+Hashcat output on the probe set, and 5M is an exact byte prefix of 10M. Before
+these additional safe replacements, exact hit-set subtraction proved gains
+of at least **+38** over CakeV3 at both bins. Complete absolute sheet attacks
+for the final 5M and 10M files have not been rerun.
 
-The preceding medium CakeV4 files had exact relative gains of +41 at 1M and
-+38 at both 5M and 10M over their corresponding CakeV3 files. The nested
-files above improved again on every measured target. Their complete original
-sheet attacks have not been rerun, so this document does not invent absolute
-full-wordlist scores for those three bins.
+A broader sample-trained deep portfolio won the fixed-word validation gates,
+but its long rules reduced full-attack throughput from the predecessor's
+measured 128-second 1M pass to an estimated 18 hours. It was rejected for the
+everyday release before completion.
 
 The teammates' closed benchmark also remains unavailable. Its exact CakeV4
 scores and ranks cannot be claimed until they run these hashes. The rule files
